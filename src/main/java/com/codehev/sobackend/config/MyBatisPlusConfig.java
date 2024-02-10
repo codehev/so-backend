@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * MyBatis Plus 配置
  *
  *
- * @author wei
+ * @author codehev
  */
 @Configuration
 @MapperScan("com.codehev.sobackend.mapper")

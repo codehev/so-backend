@@ -8,8 +8,10 @@ import com.codehev.sobackend.common.ErrorCode;
 import com.codehev.sobackend.exception.BusinessException;
 import com.codehev.sobackend.service.PostThumbService;
 import com.codehev.sobackend.service.UserService;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 帖子点赞接口
  *
- * 
- * 
+ * @author codehev
  */
 @RestController
 @RequestMapping("/post_thumb")

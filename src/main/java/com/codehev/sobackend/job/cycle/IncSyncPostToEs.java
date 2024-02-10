@@ -9,15 +9,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.scheduling.annotation.Scheduled;
 
 /**
- * 增量同步帖子到 es
- *
- * 
- * 
+ * @author codehev
+ * @email 2529799312@qq.com
+ * @date 2024-2-10
+ * @description 增量同步帖子到 es
  */
 // todo 取消注释开启任务
 //@Component
@@ -32,6 +33,10 @@ public class IncSyncPostToEs {
 
     /**
      * 每分钟执行一次
+     *
+     * @Scheduled(initialDelay =  1000, fixedDelay = 100000*1000)
+     * initialDelay当任务启动后，等多久开始执行方法
+     * fixedDelay每隔多久执行
      */
     @Scheduled(fixedRate = 60 * 1000)
     public void run() {

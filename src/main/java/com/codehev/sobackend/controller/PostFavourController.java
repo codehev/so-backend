@@ -15,8 +15,10 @@ import com.codehev.sobackend.exception.ThrowUtils;
 import com.codehev.sobackend.service.PostFavourService;
 import com.codehev.sobackend.service.PostService;
 import com.codehev.sobackend.service.UserService;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,9 +27,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 帖子收藏接口
- *
- * 
- * 
  */
 @RestController
 @RequestMapping("/post_favour")
@@ -93,7 +92,7 @@ public class PostFavourController {
      */
     @PostMapping("/list/page")
     public BaseResponse<Page<PostVO>> listFavourPostByPage(@RequestBody PostFavourQueryRequest postFavourQueryRequest,
-            HttpServletRequest request) {
+                                                           HttpServletRequest request) {
         if (postFavourQueryRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }

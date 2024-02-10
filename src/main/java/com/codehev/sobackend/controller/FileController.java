@@ -11,10 +11,12 @@ import com.codehev.sobackend.constant.FileConstant;
 import com.codehev.sobackend.exception.BusinessException;
 import com.codehev.sobackend.manager.CosManager;
 import com.codehev.sobackend.service.UserService;
+
 import java.io.File;
 import java.util.Arrays;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,8 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * 文件接口
  *
- * 
- * 
+ * @author codehev
  */
 @RestController
 @RequestMapping("/file")
