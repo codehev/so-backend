@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e73a8956-451d-4510-9df0-e70110043d59" name="Changes" comment="update: 聚合接口">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/search/SearchRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/vo/SearchVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/SearchFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/enums/SearchTypeEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PictureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/picture/PictureQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/picture/PictureQueryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/post/PostQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/post/PostQueryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/entity/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/entity/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PictureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PictureService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PictureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PictureServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/codehev/sobackend/CrawlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codehev/sobackend/CrawlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/CosManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/CosManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/search/SearchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/search/SearchRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +88,7 @@
       <recent name="com.codehev.sobackend.service.impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.codehev.sobackend.model.enums" />
       <recent name="com.codehev.sobackend.controller" />
       <recent name="com.codehev.sobackend.service" />
     </key>
@@ -176,7 +166,7 @@
       <workItem from="1707580706501" duration="1207000" />
       <workItem from="1707653179756" duration="466000" />
       <workItem from="1707653672711" duration="4746000" />
-      <workItem from="1707814600844" duration="5852000" />
+      <workItem from="1707814600844" duration="13124000" />
     </task>
     <task id="LOCAL-00001" summary="update: 修改项目模版">
       <created>1707402485658</created>
@@ -199,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707581885700</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update: 聚合接口">
+      <created>1707827809721</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707827809721</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
