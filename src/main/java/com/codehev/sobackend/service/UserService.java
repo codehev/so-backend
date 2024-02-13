@@ -1,6 +1,7 @@
 package com.codehev.sobackend.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.codehev.sobackend.model.dto.user.UserQueryRequest;
 import com.codehev.sobackend.model.entity.User;
@@ -110,6 +111,15 @@ public interface UserService extends IService<User> {
      * @return
      */
     List<UserVO> getUserVO(List<User> userList);
+
+    /**
+     * 获取用户信息(脱敏)分页
+     *
+     * @param userQueryRequest
+     * @param request
+     * @return
+     */
+    Page<UserVO> listUserVOByPage(UserQueryRequest userQueryRequest, HttpServletRequest request);
 
     /**
      * 获取查询条件

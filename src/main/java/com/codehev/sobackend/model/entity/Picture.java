@@ -3,6 +3,8 @@ package com.codehev.sobackend.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author codehev
  * @email 2529799312@qq.com
@@ -11,7 +13,8 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class Picture {
+public class Picture implements Serializable {
     private String title;
     private String url;
+    private static final long serialVersionUID = 1L;
 }

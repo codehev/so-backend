@@ -3,6 +3,7 @@ package com.codehev.sobackend.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.codehev.sobackend.common.ResultUtils;
 import com.codehev.sobackend.constant.CommonConstant;
 import com.codehev.sobackend.exception.ThrowUtils;
 import com.codehev.sobackend.model.dto.post.PostEsDTO;
@@ -308,6 +309,15 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         }).collect(Collectors.toList());
         postVOPage.setRecords(postVOList);
         return postVOPage;
+    }
+
+    @Override
+    public Page<PostVO> listPostVOByPage(PostQueryRequest postQueryRequest, HttpServletRequest request) {
+        long current = postQueryRequest.getCurrent();
+        long pageSize = postQueryRequest.getPageSize();
+        Page<Post> postPage = this.page(new Page<>(current, pageSize),
+                this.getQueryWrapper(postQueryRequest));
+        return this.getPostVOPage(postPage, request);
     }
 
 }

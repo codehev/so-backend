@@ -4,6 +4,7 @@ import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.codehev.sobackend.common.ErrorCode;
 import com.codehev.sobackend.exception.BusinessException;
+import com.codehev.sobackend.model.dto.picture.PictureQueryRequest;
 import com.codehev.sobackend.model.entity.Picture;
 import com.codehev.sobackend.service.PictureService;
 import org.jsoup.Jsoup;
@@ -26,7 +27,11 @@ import java.util.Map;
 @Service
 public class PictureServiceImpl implements PictureService {
     @Override
-    public Page<Picture> searchPictures(String searchText, long current, long pageSize) {
+    public Page<Picture> searchPictures(PictureQueryRequest pictureQueryRequest) {
+        String searchText = pictureQueryRequest.getSearchText();
+        long current = pictureQueryRequest.getCurrent();
+        long pageSize = pictureQueryRequest.getPageSize();
+
         current = (current - 1) * pageSize;
         String url = "https://www.bing.com/images/search?q=" + searchText + "&form=HDRSC2&first=" + current;
         Document doc = null;

@@ -2,10 +2,13 @@ package com.codehev.sobackend.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.codehev.sobackend.common.ResultUtils;
 import com.codehev.sobackend.constant.CommonConstant;
 import com.codehev.sobackend.constant.UserConstant;
 import com.codehev.sobackend.exception.BusinessException;
+import com.codehev.sobackend.exception.ThrowUtils;
 import com.codehev.sobackend.mapper.UserMapper;
 import com.codehev.sobackend.model.dto.user.UserQueryRequest;
 import com.codehev.sobackend.model.entity.User;
@@ -243,6 +246,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             return new ArrayList<>();
         }
         return userList.stream().map(this::getUserVO).collect(Collectors.toList());
+    }
+
+    @Override
+    public Page<UserVO> listUserVOByPage(UserQueryRequest userQueryRequest, HttpServletRequest request) {
+        long current = userQueryRequest.getCurrent();
+        long size = userQueryRequest.getPageSize();
+        Page<User> userPage = this.page(new Page<>(current, size),
+                this.getQueryWrapper(userQueryRequest));
+        //封装Page对象
+        Page<UserVO> userVOPage = new Page<>(current, size, userPage.getTotal());
+        List<UserVO> userVO = this.getUserVO(userPage.getRecords());
+        userVOPage.setRecords(userVO);
+        return userVOPage;
     }
 
     @Override

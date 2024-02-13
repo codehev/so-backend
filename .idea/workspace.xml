@@ -4,28 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e73a8956-451d-4510-9df0-e70110043d59" name="Changes" comment="update: 爬取文章和图片">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PictureController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/picture/PictureQueryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/entity/Picture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PictureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PictureServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/codehev/sobackend/CrawlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="e73a8956-451d-4510-9df0-e70110043d59" name="Changes" comment="update: 聚合接口">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/search/SearchRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/vo/SearchVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/so-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/so-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/config/MyBatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/config/MyBatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PictureController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostFavourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostFavourController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostThumbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/PostThumbController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/WxMpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/WxMpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/cycle/IncSyncPostToEs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/cycle/IncSyncPostToEs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/once/FullSyncPostToEs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/once/FullSyncPostToEs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/picture/PictureQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/picture/PictureQueryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/post/PostQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/post/PostQueryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/entity/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/entity/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PictureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PictureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PictureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PictureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codehev/sobackend/CrawlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codehev/sobackend/CrawlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,39 +58,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/workspace/GithubProjects/classification_b6/classes_crawler",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "settings.editor.splitter.proportion": "0.26985744",
-    "spring.configuration.checksum": "9488620b6040a2dde94e854dbfdb967c",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/workspace/GithubProjects/classification_b6/classes_crawler&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.26985744&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9488620b6040a2dde94e854dbfdb967c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -103,11 +99,11 @@
       <recent name="com.codehev.sobackend.service.impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.codehev.sobackend.service" />
       <recent name="com.codehev.sobackend.controller" />
+      <recent name="com.codehev.sobackend.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CrawlerTest.testFetchPassage">
+  <component name="RunManager" selected="Spring Boot.MainApplication">
     <configuration name="CrawlerTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="so-backend" />
       <extension name="coverage">
@@ -155,8 +151,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CrawlerTest.testFetchPassage" />
         <item itemvalue="Spring Boot.MainApplication" />
+        <item itemvalue="JUnit.CrawlerTest.testFetchPassage" />
         <item itemvalue="JUnit.CrawlerTest.test" />
       </list>
     </recent_temporary>
@@ -177,7 +173,10 @@
       <workItem from="1707393702068" duration="3288000" />
       <workItem from="1707554392855" duration="847000" />
       <workItem from="1707555272730" duration="11563000" />
-      <workItem from="1707580706501" duration="1156000" />
+      <workItem from="1707580706501" duration="1207000" />
+      <workItem from="1707653179756" duration="466000" />
+      <workItem from="1707653672711" duration="4746000" />
+      <workItem from="1707814600844" duration="5852000" />
     </task>
     <task id="LOCAL-00001" summary="update: 修改项目模版">
       <created>1707402485658</created>
@@ -193,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707402552083</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update: 爬取文章和图片">
+      <created>1707581885700</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707581885700</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +219,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update: 修改项目模版" />
     <MESSAGE value="update: 爬取文章和图片" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: 爬取文章和图片" />
+    <MESSAGE value="update: 聚合接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: 聚合接口" />
   </component>
 </project>

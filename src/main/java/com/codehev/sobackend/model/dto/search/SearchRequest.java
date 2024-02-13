@@ -1,4 +1,4 @@
-package com.codehev.sobackend.model.dto.picture;
+package com.codehev.sobackend.model.dto.search;
 
 import com.codehev.sobackend.common.PageRequest;
 import lombok.Data;
@@ -9,12 +9,12 @@ import java.io.Serializable;
 /**
  * @author codehev
  * @email 2529799312@qq.com
- * @date 2024-02-10 22:21
+ * @date 2024-02-13 17:15
  * @description
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PictureQueryRequest extends PageRequest implements Serializable {
+public class SearchRequest extends PageRequest implements Serializable {
     /**
      * 搜索词
      */
