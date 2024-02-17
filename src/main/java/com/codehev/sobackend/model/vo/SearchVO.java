@@ -1,5 +1,6 @@
 package com.codehev.sobackend.model.vo;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.codehev.sobackend.model.entity.Picture;
 import lombok.Data;
 
@@ -17,6 +18,7 @@ public class SearchVO implements Serializable {
     private List<PostVO> postVOList;
     private List<Picture> pictureList;
     private List<UserVO> userVOList;
+    private List<Object> dataList;
 
     private static final long serialVersionUID = 1L;
 }

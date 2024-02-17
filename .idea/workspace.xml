@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e73a8956-451d-4510-9df0-e70110043d59" name="Changes" comment="update: 聚合接口">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/SearchFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/enums/SearchTypeEnum.java" afterDir="false" />
+    <list default="true" id="e73a8956-451d-4510-9df0-e70110043d59" name="Changes" comment="update: 门面模式">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/DataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/DataSourceRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/PictureDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/PostDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/UserDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/CosManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/CosManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/search/SearchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/search/SearchRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/SearchFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/SearchFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/vo/SearchVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/vo/SearchVO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -88,6 +92,7 @@
       <recent name="com.codehev.sobackend.service.impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.codehev.sobackend.datasource" />
       <recent name="com.codehev.sobackend.model.enums" />
       <recent name="com.codehev.sobackend.controller" />
       <recent name="com.codehev.sobackend.service" />
@@ -166,7 +171,10 @@
       <workItem from="1707580706501" duration="1207000" />
       <workItem from="1707653179756" duration="466000" />
       <workItem from="1707653672711" duration="4746000" />
-      <workItem from="1707814600844" duration="13124000" />
+      <workItem from="1707814600844" duration="13282000" />
+      <workItem from="1707880201817" duration="4506000" />
+      <workItem from="1708082160916" duration="714000" />
+      <workItem from="1708175038401" duration="7597000" />
     </task>
     <task id="LOCAL-00001" summary="update: 修改项目模版">
       <created>1707402485658</created>
@@ -196,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707827809721</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update: 门面模式">
+      <created>1707842315195</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707842315195</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +232,7 @@
     <MESSAGE value="update: 修改项目模版" />
     <MESSAGE value="update: 爬取文章和图片" />
     <MESSAGE value="update: 聚合接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: 聚合接口" />
+    <MESSAGE value="update: 门面模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: 门面模式" />
   </component>
 </project>

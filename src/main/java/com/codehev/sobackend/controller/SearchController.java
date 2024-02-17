@@ -1,27 +1,14 @@
 package com.codehev.sobackend.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.codehev.sobackend.common.BaseResponse;
 import com.codehev.sobackend.common.ErrorCode;
 import com.codehev.sobackend.common.ResultUtils;
 import com.codehev.sobackend.exception.BusinessException;
 import com.codehev.sobackend.exception.ThrowUtils;
 import com.codehev.sobackend.manager.SearchFacade;
-import com.codehev.sobackend.model.dto.picture.PictureQueryRequest;
-import com.codehev.sobackend.model.dto.post.PostQueryRequest;
 import com.codehev.sobackend.model.dto.search.SearchRequest;
-import com.codehev.sobackend.model.dto.user.UserQueryRequest;
-import com.codehev.sobackend.model.entity.Picture;
-import com.codehev.sobackend.model.entity.Post;
-import com.codehev.sobackend.model.enums.SearchTypeEnum;
-import com.codehev.sobackend.model.vo.PostVO;
 import com.codehev.sobackend.model.vo.SearchVO;
-import com.codehev.sobackend.model.vo.UserVO;
-import com.codehev.sobackend.service.PictureService;
-import com.codehev.sobackend.service.PostService;
-import com.codehev.sobackend.service.UserService;
 import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

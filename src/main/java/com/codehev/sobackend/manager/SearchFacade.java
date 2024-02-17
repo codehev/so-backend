@@ -2,6 +2,7 @@ package com.codehev.sobackend.manager;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.codehev.sobackend.common.ErrorCode;
+import com.codehev.sobackend.datasource.*;
 import com.codehev.sobackend.exception.BusinessException;
 import com.codehev.sobackend.exception.ThrowUtils;
 import com.codehev.sobackend.model.dto.picture.PictureQueryRequest;
@@ -23,12 +24,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 /**
  * @author codehev
  * @email 2529799312@qq.com
  * @date 2024-02-14 0:31
- * @description 聚合搜索（门面模式实现）
+ * @description 聚合搜索（门面模式实现）,然后又抽出一层为适配器模式，在此调用适配器（不直接调用service）
+ * 适配器模式可达到参数统一
+ * 再用注册方式替代原来的Switch语句
  */
 @Component
 public class SearchFacade {
@@ -40,37 +44,28 @@ public class SearchFacade {
     @Resource
     private UserService userService;
 
+
+    @Resource
+    private PostDataSource postDataSource;
+    @Resource
+    private UserDataSource userDataSource;
+    @Resource
+    private PictureDataSource pictureDataSource;
+    @Resource
+    private DataSourceRegister dataSourceRegister;
+
     public SearchVO searchAll(@RequestBody SearchRequest searchRequest, HttpServletRequest request) {
-        if (ObjectUtils.isEmpty(searchRequest)) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
         long current = searchRequest.getCurrent();
         long pageSize = searchRequest.getPageSize();
         String searchText = searchRequest.getSearchText();
         String type = searchRequest.getType();
-        //type对象为空，或空字符串
-        ThrowUtils.throwIf(StringUtils.isBlank(type), ErrorCode.PARAMS_ERROR);
         SearchTypeEnum searchTypeEnum = SearchTypeEnum.getEnumByValue(type);
 
-        // 1. type不为空，判断type是否合法
-        if (searchTypeEnum == null) {
-            PostQueryRequest postQueryRequest = new PostQueryRequest();
-            postQueryRequest.setSearchText(searchText);
-            postQueryRequest.setCurrent(current);
-            postQueryRequest.setPageSize(pageSize);
-            Page<PostVO> postVOPage = postService.listPostVOByPage(postQueryRequest, request);
-
-            PictureQueryRequest pictureQueryRequest = new PictureQueryRequest();
-            pictureQueryRequest.setSearchText(searchText);
-            pictureQueryRequest.setCurrent(current);
-            pictureQueryRequest.setPageSize(pageSize);
-            Page<Picture> picturePage = pictureService.searchPictures(pictureQueryRequest);
-
-            UserQueryRequest userQueryRequest = new UserQueryRequest();
-            userQueryRequest.setUserName(searchText);
-            userQueryRequest.setCurrent(current);
-            userQueryRequest.setPageSize(pageSize);
-            Page<UserVO> userVOPage = userService.listUserVOByPage(userQueryRequest, request);
+        // 1. type对象为空，或空字符串，查询所有
+        if (StringUtils.isBlank(type)) {
+            Page<PostVO> postVOPage = postDataSource.doSearch(searchText, current, pageSize);
+            Page<Picture> picturePage = pictureDataSource.doSearch(searchText, current, pageSize);
+            Page<UserVO> userVOPage = userDataSource.doSearch(searchText, current, pageSize);
 
             SearchVO searchVO = new SearchVO();
             searchVO.setPostVOList(postVOPage.getRecords());
@@ -80,35 +75,44 @@ public class SearchFacade {
             return searchVO;
         }
 
-        // 2. type合法，根据type查询数据
+        // 2. type不为空且非法
+        if (searchTypeEnum == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "type类型非法");
+        }
+
+        // 3. type不为空且合法，根据type查询数据
         SearchVO searchVO = new SearchVO();
-        switch (searchTypeEnum) {
+
+        //3.1switch方式获取dataSource
+        DataSource dataSource = null;
+/*        switch (searchTypeEnum) {
             case POST:
-                PostQueryRequest postQueryRequest = new PostQueryRequest();
-                postQueryRequest.setSearchText(searchText);
-                postQueryRequest.setCurrent(current);
-                postQueryRequest.setPageSize(pageSize);
-                Page<PostVO> postVOPage = postService.listPostVOByPage(postQueryRequest, request);
-                searchVO.setPostVOList(postVOPage.getRecords());
+                dataSource = postDataSource;
                 break;
             case PICTURE:
-                PictureQueryRequest pictureQueryRequest = new PictureQueryRequest();
-                pictureQueryRequest.setSearchText(searchText);
-                pictureQueryRequest.setCurrent(current);
-                pictureQueryRequest.setPageSize(pageSize);
-                Page<Picture> picturePage = pictureService.searchPictures(pictureQueryRequest);
-                searchVO.setPictureList(picturePage.getRecords());
+                dataSource = pictureDataSource;
                 break;
             case USER:
-                UserQueryRequest userQueryRequest = new UserQueryRequest();
-                userQueryRequest.setUserName(searchText);
-                userQueryRequest.setCurrent(current);
-                userQueryRequest.setPageSize(pageSize);
-                Page<UserVO> userVOPage = userService.listUserVOByPage(userQueryRequest, request);
-                searchVO.setUserVOList(userVOPage.getRecords());
+                dataSource = userDataSource;
                 break;
             default:
+                throw new BusinessException(ErrorCode.PARAMS_ERROR, "type类型非法");
+        }*/
+        //3.2注册的方式获取dataSource
+        dataSource = dataSourceRegister.getDataSourceByType(type);
+        Page page = dataSource.doSearch(searchText, current, pageSize);
+        switch (searchTypeEnum) {
+            case POST:
+                searchVO.setPostVOList(page.getRecords());
                 break;
+            case PICTURE:
+                searchVO.setPictureList(page.getRecords());
+                break;
+            case USER:
+                searchVO.setUserVOList(page.getRecords());
+                break;
+            default:
+                searchVO.setDataList(page.getRecords());
         }
         return searchVO;
     }
