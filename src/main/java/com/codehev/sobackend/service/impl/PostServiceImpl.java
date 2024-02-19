@@ -32,6 +32,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
@@ -51,9 +52,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * 帖子服务实现
- *
- * 
- * 
  */
 @Service
 @Slf4j
@@ -209,7 +207,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Page<Post> page = new Page<>();
         page.setTotal(searchHits.getTotalHits());
         List<Post> resourceList = new ArrayList<>();
-        // 查出结果后，从 db 获取最新动态数据（比如点赞数）
+        // 查出结果后，从 db 获取最新动态数据（比如点赞数）;es存储静态数据
         if (searchHits.hasSearchHits()) {
             List<SearchHit<PostEsDTO>> searchHitList = searchHits.getSearchHits();
             List<Long> postIdList = searchHitList.stream().map(searchHit -> searchHit.getContent().getId())

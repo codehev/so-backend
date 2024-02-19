@@ -7,22 +7,23 @@ import com.google.gson.Gson;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+
 import lombok.Data;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 /**
  * 帖子 ES 包装类
+ *  todo 取消@Document注释开启 ES（须先配置 ES）
  *
- * 
- * 
- **/
-// todo 取消注释开启 ES（须先配置 ES）
-//@Document(indexName = "post")
+ * @author codehev
+ */
+@Document(indexName = "post")
 @Data
 public class PostEsDTO implements Serializable {
 

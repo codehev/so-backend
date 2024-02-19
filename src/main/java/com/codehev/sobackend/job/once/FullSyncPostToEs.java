@@ -12,13 +12,16 @@ import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 /**
- * 全量同步帖子到 es
+ * 全量（所有数据）同步帖子到 es
+ * CommandLineRunner项目启动后执行一次
+ *
  * @author codehev
  */
 // todo 取消注释开启任务
-//@Component
+@Component
 @Slf4j
 public class FullSyncPostToEs implements CommandLineRunner {
 

@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e73a8956-451d-4510-9df0-e70110043d59" name="Changes" comment="update: 门面模式">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/DataSourceRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/PictureDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/PostDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/UserDataSource.java" afterDir="false" />
+    <list default="true" id="e73a8956-451d-4510-9df0-e70110043d59" name="Changes" comment="update: es搜索，数据同步（定时任务、canal）">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/SimpleCanalClientExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/controller/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/SearchFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/manager/SearchFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/vo/SearchVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/vo/SearchVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/so-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/so-backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/PostDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/datasource/PostDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/esdao/PostEsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/esdao/PostEsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/cycle/IncSyncPostToEs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/cycle/IncSyncPostToEs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/once/FullSyncPostToEs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/job/once/FullSyncPostToEs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/post/PostEsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/model/dto/post/PostEsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codehev/sobackend/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +101,20 @@
       <recent name="com.codehev.sobackend.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MainApplication">
+  <component name="RunManager" selected="Application.SimpleCanalClientExample">
+    <configuration name="SimpleCanalClientExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.codehev.sobackend.SimpleCanalClientExample" />
+      <module name="so-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codehev.sobackend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CrawlerTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="so-backend" />
       <extension name="coverage">
@@ -146,6 +162,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SimpleCanalClientExample" />
         <item itemvalue="Spring Boot.MainApplication" />
         <item itemvalue="JUnit.CrawlerTest.testFetchPassage" />
         <item itemvalue="JUnit.CrawlerTest.test" />
@@ -174,7 +191,10 @@
       <workItem from="1707814600844" duration="13282000" />
       <workItem from="1707880201817" duration="4506000" />
       <workItem from="1708082160916" duration="714000" />
-      <workItem from="1708175038401" duration="7597000" />
+      <workItem from="1708175038401" duration="8916000" />
+      <workItem from="1708220473590" duration="3224000" />
+      <workItem from="1708310929912" duration="10768000" />
+      <workItem from="1708358172707" duration="49000" />
     </task>
     <task id="LOCAL-00001" summary="update: 修改项目模版">
       <created>1707402485658</created>
@@ -211,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707842315195</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update: 适配器模式，注册方式">
+      <created>1708183922849</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708183922849</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +260,8 @@
     <MESSAGE value="update: 爬取文章和图片" />
     <MESSAGE value="update: 聚合接口" />
     <MESSAGE value="update: 门面模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: 门面模式" />
+    <MESSAGE value="update: 适配器模式，注册方式" />
+    <MESSAGE value="update: es搜索，数据同步（定时任务、canal）" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: es搜索，数据同步（定时任务、canal）" />
   </component>
 </project>
