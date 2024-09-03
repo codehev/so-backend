@@ -16,6 +16,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication(exclude = {RedisAutoConfiguration.class})
 @MapperScan("com.codehev.sobackend.mapper")
 @EnableScheduling
+//开启aop功能
 @EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)
 public class MainApplication {
 

@@ -25,10 +25,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @author codehev
- * @email 2529799312@qq.com
+ * @email codehev@qq.com
  * @date 2024-02-14 0:31
  * @description 聚合搜索（门面模式实现）,然后又抽出一层为适配器模式，在此调用适配器（不直接调用service）
  * 适配器模式可达到参数统一
@@ -63,16 +64,32 @@ public class SearchFacade {
 
         // 1. type对象为空，或空字符串，查询所有
         if (StringUtils.isBlank(type)) {
-            Page<PostVO> postVOPage = postDataSource.doSearch(searchText, current, pageSize);
-            Page<Picture> picturePage = pictureDataSource.doSearch(searchText, current, pageSize);
-            Page<UserVO> userVOPage = userDataSource.doSearch(searchText, current, pageSize);
+            CompletableFuture<Page<UserVO>> userTask = CompletableFuture.supplyAsync(() -> {
+                Page<UserVO> userVOPage = userDataSource.doSearch(searchText, current, pageSize);
+                return userVOPage;
+            });
+            CompletableFuture<Page<PostVO>> postTask = CompletableFuture.supplyAsync(() -> {
+                Page<PostVO> postVOPage = postDataSource.doSearch(searchText, current, pageSize);
+                return postVOPage;
+            });
+            CompletableFuture<Page<Picture>> pictureTask = CompletableFuture.supplyAsync(() -> {
+                Page<Picture> picturePage = pictureDataSource.doSearch(searchText, current, pageSize);
+                return picturePage;
+            });
+            CompletableFuture.allOf(userTask, postTask, pictureTask).join();
 
-            SearchVO searchVO = new SearchVO();
-            searchVO.setPostVOList(postVOPage.getRecords());
-            searchVO.setPictureList(picturePage.getRecords());
-            searchVO.setUserVOList(userVOPage.getRecords());
-
-            return searchVO;
+            try {
+                Page<UserVO> userVOPage = userTask.get();
+                Page<PostVO> postVOPage = postTask.get();
+                Page<Picture> picturePage = pictureTask.get();
+                SearchVO searchVO = new SearchVO();
+                searchVO.setUserVOList(userVOPage.getRecords());
+                searchVO.setPostVOList(postVOPage.getRecords());
+                searchVO.setPictureList(picturePage.getRecords());
+                return searchVO;
+            } catch (Exception e) {
+                throw new BusinessException(ErrorCode.SYSTEM_ERROR, "查询异常");
+            }
         }
 
         // 2. type不为空且非法
@@ -83,7 +100,8 @@ public class SearchFacade {
         // 3. type不为空且合法，根据type查询数据
         SearchVO searchVO = new SearchVO();
 
-        //3.1switch方式获取dataSource
+        //3.1switch方式获取dataSource，相当于if else
+        // 缺点是switch语句的每个分支都需要写一个case，如果业务扩张，类型很多，就会堆积很多代码，不优雅
         DataSource dataSource = null;
 /*        switch (searchTypeEnum) {
             case POST:
@@ -100,8 +118,9 @@ public class SearchFacade {
         }*/
         //3.2注册的方式获取dataSource
         dataSource = dataSourceRegister.getDataSourceByType(type);
-        Page page = dataSource.doSearch(searchText, current, pageSize);
-        switch (searchTypeEnum) {
+        Page<?> page = dataSource.doSearch(searchText, current, pageSize);
+        searchVO.setDataList(page.getRecords());
+        /*switch (searchTypeEnum) {
             case POST:
                 searchVO.setPostVOList(page.getRecords());
                 break;
@@ -113,7 +132,7 @@ public class SearchFacade {
                 break;
             default:
                 searchVO.setDataList(page.getRecords());
-        }
+        }*/
         return searchVO;
     }
 }

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * @author codehev
- * @email 2529799312@qq.com
+ * @email codehev@qq.com
  * @date 2024-02-13 17:15
  * @description
  */
@@ -24,5 +24,6 @@ public class SearchRequest extends PageRequest implements Serializable {
      * 类型
      */
     private String type;
+
     private static final long serialVersionUID = 1L;
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @author codehev
- * @email 2529799312@qq.com
+ * @email codehev@qq.com
  * @date 2024-02-13 17:19
  * @description 聚合搜索结果
  */
@@ -18,7 +18,7 @@ public class SearchVO implements Serializable {
     private List<PostVO> postVOList;
     private List<Picture> pictureList;
     private List<UserVO> userVOList;
-    private List<Object> dataList;
+    private List<?> dataList;
 
     private static final long serialVersionUID = 1L;
 }

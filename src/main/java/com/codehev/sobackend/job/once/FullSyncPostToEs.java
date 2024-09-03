@@ -41,6 +41,7 @@ public class FullSyncPostToEs implements CommandLineRunner {
         final int pageSize = 500;
         int total = postEsDTOList.size();
         log.info("FullSyncPostToEs start, total {}", total);
+        //分批导入
         for (int i = 0; i < total; i += pageSize) {
             int end = Math.min(i + pageSize, total);
             log.info("sync from {} to {}", i, end);

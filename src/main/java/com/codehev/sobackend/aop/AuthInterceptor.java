@@ -9,6 +9,7 @@ import com.codehev.sobackend.annotation.AuthCheck;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -21,8 +22,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 /**
  * 权限校验 AOP
  *
- * 
- * 
+ * @author codehev
  */
 @Aspect
 @Component

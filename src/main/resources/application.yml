@@ -1,5 +1,5 @@
 # 公共配置文件
-
+# 文档地址：http://localhost:8101/api/doc.html
 server:
   address: 0.0.0.0
   port: 8101
@@ -32,7 +32,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/so
     username: root
-    password: 1234
+    password: 666666
   # Redis 配置
   # todo 需替换配置，然后取消注释
 #  redis:

@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author codehev
- * @email 2529799312@qq.com
+ * @email codehev@qq.com
  * @date 2024-2-10
  * @description 增量（最近更新的数据）同步帖子到 es
  */
