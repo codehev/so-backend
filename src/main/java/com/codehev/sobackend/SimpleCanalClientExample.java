@@ -18,6 +18,9 @@ import com.alibaba.otter.canal.protocol.CanalEntry.RowData;
 
 /**
  * @author codehev
+ * @email codehev@qq.com
+ * @date 2024-
+ * @description Canal客户端官网示例代码，未保存到es
  */
 public class SimpleCanalClientExample {
 

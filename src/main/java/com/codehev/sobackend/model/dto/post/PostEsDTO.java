@@ -19,10 +19,11 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 /**
  * 帖子 ES 包装类
- *  todo 取消@Document注释开启 ES（须先配置 ES）
- *
+ *  todo 取消@Document注释，开启 ES（须先配置 ES）
+ *  最好手动创建索引，类似于mysql自己建库建表，不推荐springdata框架默认不存在索引时自动创建，所以此类很多字段注解没加上
  * @author codehev
  */
+//post，post_v1都可以
 @Document(indexName = "post")
 @Data
 public class PostEsDTO implements Serializable {
@@ -31,6 +32,7 @@ public class PostEsDTO implements Serializable {
 
     /**
      * id
+     * es系统生成的字段id与这里的id绑定，s系统生成的字段id与这里的id一致
      */
     @Id
     private Long id;
@@ -49,16 +51,17 @@ public class PostEsDTO implements Serializable {
      * 标签列表
      */
     private List<String> tags;
+//    把点赞数thumbNum，收藏数favourNum删除
 
-    /**
-     * 点赞数
-     */
-    private Integer thumbNum;
-
-    /**
-     * 收藏数
-     */
-    private Integer favourNum;
+//    /**
+//     * 点赞数
+//     */
+//    private Integer thumbNum;
+//
+//    /**
+//     * 收藏数
+//     */
+//    private Integer favourNum;
 
     /**
      * 创建用户 id

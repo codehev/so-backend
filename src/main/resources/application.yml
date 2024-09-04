@@ -1,5 +1,4 @@
 # 公共配置文件
-# 文档地址：http://localhost:8101/api/doc.html
 server:
   address: 0.0.0.0
   port: 8101
@@ -9,6 +8,8 @@ server:
     session:
       cookie:
         max-age: 2592000
+
+# 接口文档地址：http://localhost:8101/api/doc.html
 
 spring:
   application:
