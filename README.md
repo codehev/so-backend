@@ -1,6 +1,6 @@
-# 聚合搜索平台-后端
+# 灵犀聚搜-后端
 
-> **项目GitHub地址**
+> **GitHub项目地址**
 >
 > [前端](https://github.com/codehev/so-frontend) | [后端](https://github.com/codehev/so-backend)
 
