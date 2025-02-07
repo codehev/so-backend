@@ -76,6 +76,7 @@ public class SearchFacade {
                 Page<Picture> picturePage = pictureDataSource.doSearch(searchText, current, pageSize);
                 return picturePage;
             });
+            //CompletableFuture.allOf组合这些任务、并发执行，并通过join方法开启阻塞等待。
             CompletableFuture.allOf(userTask, postTask, pictureTask).join();
 
             try {
